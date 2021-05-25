@@ -1,0 +1,2 @@
+importFrom("utils", "combn")
+exportPattern(shapleyvalue)

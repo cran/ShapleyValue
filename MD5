@@ -1,7 +1,7 @@
-0faea502f067dd4a423e523dc317a561 *DESCRIPTION
+18f41ff5333aeed3541098fbf189e033 *DESCRIPTION
 cc6e1b100325eeffc1e75b6d4d0a7c6a *LICENSE
 a02b8a4810bf4cc1d5e127fda368d728 *NAMESPACE
-79aefd1bd75325c77e01339c60098013 *R/ShapleyValue.R
+cbc55a7d6a8d21ceb5df8968052eadfd *R/ShapleyValue.R
 f22d8db3285b62790127c79a9558f9b8 *build/vignette.rds
 ff30b188cfd04f42a38abebc110e4035 *inst/doc/ShapleyValue.R
 37a9a4891c3c54fb3502686ea2818e23 *inst/doc/ShapleyValue.Rmd

@@ -8,11 +8,6 @@
 # In this package, users do not need to point out the number of independent variables, it will be caught automatically while inputting x.
 #
 
-
-#error2 <- function(message) {
- # stop(simpleError(message))
-# }
-
 shapleyvalue <- function(y,x){
   k <- ncol(x)
   times_wt <- NULL
@@ -24,7 +19,6 @@ shapleyvalue <- function(y,x){
 
   if (k==1){
     stop(simpleError("No need for using shapley regression!"))
-    #error2("No need for using shapley regression!")
   }
   else if (k==2){
     for (i in 1:k){
@@ -67,9 +61,14 @@ shapleyvalue <- function(y,x){
               x1 <- x[,x_lab[l]]
               x_reslab <- xx[-l]
               x_res <- x[x_reslab]
-              lm <- lm(y~.,data=x_res)
+
+              x_res <- cbind(x_res,x1)
+              lm <- lm(y~.-x1,data=x_res)
+              lm2 <- lm(y~.,data=x_res)
+
+              #lm <- lm(y~.,data=x_res)
               r <- summary(lm)$r.squared
-              lm2 <- lm(y~.+x1,data=x_res)
+              #lm2 <- lm(y~.+x1,data=x_res)
               r2 <- summary(lm2)$r.squared
             }
           }
@@ -97,9 +96,14 @@ shapleyvalue <- function(y,x){
                 x1 <- x[,x_lab[l]]
                 x_reslab <- xx[,o][-l]
                 x_res <- x[x_reslab]
-                lm <- lm(y~.,data=x_res)
+
+                x_res <- cbind(x_res,x1)
+                lm <- lm(y~.-x1,data=x_res)
+                lm2 <- lm(y~.,data=x_res)
+
+                #lm <- lm(y~.,data=x_res)
                 r <- summary(lm)$r.squared
-                lm2 <- lm(y~.+x1,data=x_res)
+                #lm2 <- lm(y~.+x1,data=x_res)
                 r2 <- summary(lm2)$r.squared
               }
             }

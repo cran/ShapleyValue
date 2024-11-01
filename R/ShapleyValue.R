@@ -1,13 +1,9 @@
-# Shapley Value Regression.
-#
-# This is a package for relative importance calculation based on Shapley Value Regression.
-#' @importFrom ("utils", "combn")
+#' Shapley Value Regression
+#'
 #' @param y is the data set of dependent variable
 #' @param x is the data set of independent variables
-#
-# In this package, users do not need to point out the number of independent variables, it will be caught automatically while inputting x.
-#
-
+#'
+#' @export
 shapleyvalue <- function(y,x){
   k <- ncol(x)
   times_wt <- NULL
